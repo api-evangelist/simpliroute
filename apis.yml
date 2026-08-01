@@ -1,7 +1,14 @@
 aid: simpliroute
 name: Simpliroute
-description: Simpliroute is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  SimpliRoute is an AI-powered last-mile route optimization and delivery management platform,
+  founded in Chile and operating across Latin America and beyond. Its REST API (base URL
+  https://api.simpliroute.com/v1, authenticated with an Authorization Token header) lets
+  developers create delivery and pickup visits, build daily plans, run the route-optimization
+  engine over vehicles and deliveries, manage vehicles, drivers, couriers, clients, skills,
+  zones and fleets, handle invoices, and subscribe to lifecycle webhooks (route started, on
+  its way, checkout, route finished). First-party Node/TypeScript and Python SDKs are published
+  under the github.com/simpliroute organization.
 url: https://raw.githubusercontent.com/api-evangelist/simpliroute/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +16,103 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/simpliroute.png
 tags:
 - Company
-apis: []
+- Logistics
+- Route Optimization
+- Last Mile Delivery
+- Delivery Management
+- Fleet Management
+- Transportation
+- Webhooks
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: SimpliRoute API
+  description: >-
+    REST API for delivery visits, route plans, route optimization, vehicles, drivers, clients,
+    invoices and lifecycle webhooks. Token-header authenticated, JSON over HTTPS, versioned at /v1.
+  humanURL: https://documentation.simpliroute.com/
+  baseURL: https://api.simpliroute.com/v1
+  properties:
+  - type: Documentation
+    url: https://documentation.simpliroute.com/
+  - type: APIReference
+    url: https://documentation.simpliroute.com/
+  - type: Authentication
+    url: authentication/simpliroute-authentication.yml
 common:
 - type: Website
   url: https://simpliroute.com
+- type: DeveloperPortal
+  url: https://simpliroute.com/en/development
+- type: Documentation
+  url: https://documentation.simpliroute.com/
+- type: APIReference
+  url: https://documentation.simpliroute.com/
+- type: GettingStarted
+  url: https://documentation.simpliroute.com/#introduction
+- type: Support
+  url: https://help.simpliroute.com/en
+- type: Blog
+  url: https://simpliroute.com/en/blog
+- type: GitHubOrganization
+  url: https://github.com/simpliroute
+- type: SignUp
+  url: https://app2.simpliroute.com/#/signup
+- type: Login
+  url: https://app2.simpliroute.com/#/login
+- type: TermsOfService
+  url: https://simpliroute.com/en/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://simpliroute.com/en/privacy-policy
+- type: Authentication
+  url: authentication/simpliroute-authentication.yml
+- type: Conventions
+  url: conventions/simpliroute-conventions.yml
+- type: ErrorCatalog
+  url: errors/simpliroute-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/simpliroute-lifecycle.yml
+- type: Conformance
+  url: conformance/simpliroute-conformance.yml
+- type: DataModel
+  url: data-model/simpliroute-data-model.yml
+- type: Webhooks
+  url: asyncapi/simpliroute-webhooks.yml
+- type: Packages
+  url: packages/simpliroute-packages.yml
+- type: SDKs
+  url: packages/simpliroute-packages.yml
+- type: MCPServer
+  url: mcp/simpliroute-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/simpliroute-domain-security.yml
+- type: LLMsTxt
+  url: llms/simpliroute-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1

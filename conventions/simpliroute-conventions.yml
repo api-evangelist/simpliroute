@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: https://documentation.simpliroute.com/#introduction
+docs: https://documentation.simpliroute.com/
+summary: >-
+  Cross-cutting request/response semantics for the SimpliRoute REST API, captured from the
+  public API reference. Resource-oriented URLs under a single versioned base, HTTP Token
+  auth, JSON request/response bodies, and standard HTTP status codes for errors.
+conventions:
+  base_url: https://api.simpliroute.com
+  versioning:
+    style: uri-path
+    current: v1
+    example: https://api.simpliroute.com/v1/routes/visits/
+  authentication:
+    style: api-key-header
+    header: Authorization
+    value_prefix: "Token "
+    ref: authentication/simpliroute-authentication.yml
+  media_type:
+    request: application/json
+    response: application/json
+    note: JSON is returned by all API responses, including error logs.
+  cors: supported
+  pagination:
+    style: count-wrapped
+    observed_fields: [count]
+    note: >-
+      List responses carry a count field; the reference does not document a formal
+      cursor/offset envelope, so pagination is treated as provider-defined.
+  idempotency:
+    supported: false
+    note: No Idempotency-Key header or idempotent-retry contract is documented.
+  request_tracing:
+    supported: false
+  error_envelope:
+    style: http-status + json
+    ref: errors/simpliroute-error-codes.yml
+    note: >-
+      Errors are signaled with built-in HTTP response codes and a JSON body; the
+      optimization engine additionally returns structured off-route reason codes
+      (code + details) for clients left off a route.
+  rate_limit_signaling:
+    documented: false
+related:
+  - errors/simpliroute-error-codes.yml
+  - authentication/simpliroute-authentication.yml
+  - lifecycle/simpliroute-lifecycle.yml

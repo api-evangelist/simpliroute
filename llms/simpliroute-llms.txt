@@ -1,0 +1,34 @@
+# SimpliRoute
+
+> SimpliRoute is an AI-powered last-mile route optimization and delivery management platform (founded in Chile, serving Latin America and beyond). Its REST API lets you create delivery visits, build and optimize routes, manage vehicles, drivers, clients and fleets, run the optimization engine, and receive lifecycle webhooks.
+
+## API
+- [SimpliRoute API Reference](https://documentation.simpliroute.com/): REST API, base URL https://api.simpliroute.com/v1, Token header authentication.
+- Authentication: `Authorization: Token <your_token>` (token from https://app2.simpliroute.com/#/uprofile/info). Verify with `GET /v1/accounts/me/`.
+
+## Core resources
+- Visits: `/v1/routes/visits/` — create, retrieve, update, delete, checkout, items, extra fields, pictures.
+- Plans: `/v1/plans/` — daily route plans.
+- Routes: `/v1/routes/routes/` — routes, route properties, per-route visits.
+- Vehicles: `/v1/routes/vehicles/` — fleet vehicles with skills/capacity.
+- Clients: `/v1/accounts/clients/` — recipients + custom properties.
+- Users / Drivers / Couriers: `/v1/accounts/drivers/`, `/v1/accounts/couriers/`.
+- Skills, Zones, Tags, Fleets, Observations, Sellers.
+- Optimization: optimizator.simpliroute.com — instance/vehicles/deliveries, backhaul, pick-up & delivery, incremental, long/radial routing, off-route reasons.
+- Invoices: `/v1/accounting/invoices/`, products & product categories.
+- Webhooks: `/v1/addons/webhooks/`.
+
+## Webhook events
+- plan.creation, plan.edition, route.creation, route.edition, route.started, route.finish, on_its_way, checkout, checkout.detailed
+
+## SDKs
+- Node/TypeScript SDK: https://github.com/simpliroute/simpliroute-sdk-node
+- Python SDK: https://github.com/simpliroute/simpliroute-sdk-python
+- npm @simpliroute/core: https://www.npmjs.com/package/@simpliroute/core
+
+## Docs & support
+- Help Center: https://help.simpliroute.com/en
+- Developer overview: https://simpliroute.com/en/development
+- Sign up (14-day free trial): https://app2.simpliroute.com/#/signup
+- Terms: https://simpliroute.com/en/terms-and-conditions
+- Privacy: https://simpliroute.com/en/privacy-policy

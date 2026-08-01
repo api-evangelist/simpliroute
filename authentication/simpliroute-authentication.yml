@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://documentation.simpliroute.com/#authentication
+docs: https://documentation.simpliroute.com/#authentication
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: TokenAuth
+    type: apiKey
+    in: header
+    parameter_name: Authorization
+    value_prefix: "Token "
+    description: >-
+      All SimpliRoute API requests authenticate with a static API token passed in the
+      Authorization header as "Authorization: Token <your_token>". The token is issued
+      per account and retrieved from the user profile in the SimpliRoute web app.
+    token_source: https://app2.simpliroute.com/#/uprofile/info
+    verify_operation: "GET https://api.simpliroute.com/v1/accounts/me/"
+    sources: [https://documentation.simpliroute.com/#authentication]
+notes:
+  - HTTP Token authentication (Django REST Framework style); no OAuth2 / OIDC surface is documented.
+  - CORS is supported; the docs warn never to expose the token in client-side code.
+  - A 14-day free trial account (https://app2.simpliroute.com/#/signup) issues a working token for testing.

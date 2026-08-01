@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://documentation.simpliroute.com/
+docs: https://documentation.simpliroute.com/
+versioning:
+  scheme: uri-path
+  current: v1
+  base: https://api.simpliroute.com/v1
+  docs: https://documentation.simpliroute.com/#introduction
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  note: No public status page found (status.simpliroute.com did not resolve).
+deprecated_operations: []
+notes:
+  - Single stable v1 surface; additional hosts observed (api-gateway.simpliroute.com for tms/datamart, optimizator.simpliroute.com for optimization/metadata).

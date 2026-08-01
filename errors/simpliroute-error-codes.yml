@@ -1,0 +1,58 @@
+generated: '2026-07-21'
+method: searched
+source: https://documentation.simpliroute.com/#off-route-reasons
+docs: https://documentation.simpliroute.com/
+format: http-status + structured-reason-codes
+envelope:
+  transport: HTTP status code
+  body: application/json
+  note: >-
+    API-level failures use standard HTTP status codes with a JSON body. The optimization
+    engine returns per-node off-route reason codes on the "code" field with a human-readable
+    "details" field when a client/visit cannot be assigned to a route.
+http_errors:
+  - status: 200
+    meaning: OK - request succeeded
+  - status: 201
+    meaning: Created - resource created
+  - status: 400
+    meaning: Bad Request - malformed payload or invalid field values
+  - status: 401
+    meaning: Unauthorized - missing or invalid Authorization Token
+  - status: 403
+    meaning: Forbidden - token lacks permission for the resource
+  - status: 404
+    meaning: Not Found - resource does not exist
+  - status: 500
+    meaning: Internal Server Error
+off_route_reason_codes:
+  field: code
+  families:
+    EXC_PAR: Partition / capacity & working-time exceptions (feature-compatible vehicle assignment)
+    EXC_SO: Solution-optimization filtering exceptions
+    EXC_UNK: Undetermined cause
+  codes:
+    - code: EXC_PAR-001
+      meaning: Node out of route due to lack of capacity in vehicles with this feature.
+    - code: EXC_PAR-002
+      meaning: Compatible vehicles provided for the feature are estimated not to have sufficient working time.
+    - code: EXC_PAR-003
+      meaning: No vehicles compatible with the feature of these nodes were provided.
+    - code: EXC_PAR-004
+      meaning: Complex analysis estimates there is not enough capacity to serve all these nodes.
+    - code: EXC_PAR-005
+      meaning: Complex analysis estimates there is not enough working time to serve all these nodes.
+    - code: EXC_PAR-006
+      meaning: Insufficient number of vehicles assigned to the partition; likely not enough capacity.
+    - code: EXC_PAR-007
+      meaning: Node off route because vehicle assignment resulted in insufficient time.
+    - code: EXC_PAR-008
+      meaning: Vehicle assigner could not assign a vehicle compatible with the feature of certain nodes.
+    - code: EXC_SO-001
+      meaning: Routing service filtered out nodes due to internal incompatibilities.
+    - code: EXC_SO-002
+      meaning: Node off the route due to preference for more clustered solutions with fewer crossings.
+    - code: EXC_SO-003
+      meaning: Node out of route due to lack of capacity or time in nearby vehicles.
+    - code: EXC_UNK-000
+      meaning: The cause of why a client was left off-route could not be determined.

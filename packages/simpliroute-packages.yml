@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/simpliroute
+packages:
+  - language: typescript
+    registry: github
+    name: simpliroute-sdk-node
+    url: https://github.com/simpliroute/simpliroute-sdk-node
+    description: SimpliRoute NodeJS, TypeScript, JavaScript API SDK.
+    official: true
+  - language: python
+    registry: github
+    name: simpliroute-sdk-python
+    url: https://github.com/simpliroute/simpliroute-sdk-python
+    description: SimpliRoute API Python 3.x SDK.
+    official: true
+  - language: typescript
+    registry: npm
+    name: "@simpliroute/core"
+    url: https://www.npmjs.com/package/@simpliroute/core
+    install: npm install @simpliroute/core
+    description: SimpliRoute domain objects and use cases in TypeScript (repo simpliroute/simpliroute-core-ts).
+    official: true
+  - language: python
+    registry: pypi
+    name: simpliroute
+    url: https://pypi.org/project/simpliroute/
+    install: pip install simpliroute
+    description: "Package to abstract simpliroute Rest api (community-published; unverified org ownership)."
+    official: false
+notes:
+  - First-party SDKs are published under the github.com/simpliroute organization (Node + Python).
+  - Community integrations also exist (Activepieces @activepieces/piece-simpliroute) but are not first-party.

@@ -1,0 +1,116 @@
+generated: '2026-07-21'
+method: derived
+source: https://documentation.simpliroute.com/
+docs: https://documentation.simpliroute.com/
+summary: >-
+  Entity-relationship graph derived from the documented SimpliRoute REST resources. The core
+  domain is delivery Visits assigned into Routes within a daily Plan, executed by Vehicles /
+  Drivers, for Clients, with optional Skills, Zones, Fleets, Items, Invoices and Webhooks.
+entities:
+  - name: Visit
+    path: /v1/routes/visits/
+    description: A delivery/pickup stop (the most relevant integration object); carries address, time windows, items, extra fields, observations and checkout state.
+  - name: Plan
+    path: /v1/plans/
+    description: A daily plan grouping routes and vehicles.
+  - name: Route
+    path: /v1/routes/routes/
+    description: An ordered sequence of visits assigned to a vehicle for a date.
+  - name: RouteProperty
+    path: /v1/routes/routes/{route_id}/properties/
+    description: Custom key/value properties attached to a route.
+  - name: Vehicle
+    path: /v1/routes/vehicles/
+    description: A delivery vehicle with capacity and feature/skill compatibility.
+  - name: Client
+    path: /v1/accounts/clients/
+    description: A customer / delivery recipient, with custom properties.
+  - name: User
+    path: /v1/accounts/drivers/
+    description: A platform user / driver.
+  - name: Courier
+    path: /v1/accounts/couriers/
+    description: A courier account.
+  - name: Skill
+    path: /v1/routes/skills/
+    description: A capability tag matching visits to compatible vehicles.
+  - name: Zone
+    path: /v1/routes/zones/
+    description: A geographic zone.
+  - name: Fleet
+    path: /v1/fleets/
+    description: A group of vehicles.
+  - name: Tag
+    path: /v1/routes/tags/
+    description: A label applied to visits/routes.
+  - name: Observation
+    path: /v1/routes/observations/
+    description: A note/observation attached to a visit.
+  - name: Item
+    path: /v1/routes/visits/{visit_id}/items
+    description: A line item within a visit.
+  - name: Seller
+    path: /v1/sellers/
+    description: A seller associated with visits/items.
+  - name: Invoice
+    path: /v1/accounting/invoices/
+    description: An invoice with invoice items and delivery issues.
+  - name: Product
+    path: /v1/accounting/products/
+    description: A product (with product categories) referenced by invoices.
+  - name: Webhook
+    path: /v1/addons/webhooks/
+    description: An outbound event subscription.
+relationships:
+  - from: Route
+    to: Plan
+    type: belongs_to
+    via: plan
+  - from: Route
+    to: Vehicle
+    type: belongs_to
+    via: vehicle
+  - from: Visit
+    to: Route
+    type: belongs_to
+    via: route
+  - from: Route
+    to: Visit
+    type: has_many
+    via: visits
+  - from: Visit
+    to: Item
+    type: has_many
+    via: items
+  - from: Visit
+    to: Observation
+    type: has_many
+    via: observations
+  - from: Visit
+    to: Client
+    type: belongs_to
+    via: client
+  - from: RouteProperty
+    to: Route
+    type: belongs_to
+    via: route
+  - from: Vehicle
+    to: Skill
+    type: has_many
+    via: skills
+  - from: Vehicle
+    to: Fleet
+    type: belongs_to
+    via: fleet
+  - from: Invoice
+    to: InvoiceItem
+    type: has_many
+    via: items
+  - from: Invoice
+    to: DeliveryIssue
+    type: has_many
+    via: delivery-issues
+  - from: Product
+    to: ProductCategory
+    type: belongs_to
+    via: category

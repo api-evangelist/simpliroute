@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: generated
+source: https://documentation.simpliroute.com/
+skills:
+  - file: simpliroute-create-visit-and-optimize.md
+    name: Create delivery visits and optimize routes
+    api: https://documentation.simpliroute.com/
+    operations:
+      - "POST /v1/routes/visits/"
+      - "GET /v1/routes/visits/"
+      - "POST /v1/plans/"
+      - "POST /v1/routes/routes/"
+      - "GET /v1/plans/routes/{route_id}/visits/"
+  - file: simpliroute-track-deliveries-webhooks.md
+    name: Track deliveries with webhooks and checkout
+    api: https://documentation.simpliroute.com/
+    operations:
+      - "POST /v1/addons/webhooks/"
+      - "GET /v1/addons/webhooks/"
+      - "POST /v1/mobile/visit/{visit_id}/checkout/"
+      - "GET /v1/routes/visits/{visit_id}/"
+notes:
+  - Skills are grounded in real endpoints from the public API reference; SimpliRoute publishes no OpenAPI, so operations are documented HTTP method+path (not spec operationIds).

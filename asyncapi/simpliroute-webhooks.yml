@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: https://documentation.simpliroute.com/#webhooks
+type: Webhooks
+docs: https://documentation.simpliroute.com/#webhooks
+summary: >-
+  SimpliRoute publishes an outbound webhook surface that notifies subscriber endpoints of
+  plan, route and delivery lifecycle events. Webhooks are managed via the REST API under
+  /v1/addons/webhooks/ (create, list, update, delete) and each subscription targets an event
+  type and a delivery URL.
+management_api:
+  base: https://api.simpliroute.com/v1/addons/webhooks/
+  operations:
+    - POST /v1/addons/webhooks/    # Create Webhook
+    - GET /v1/addons/webhooks/     # List Webhooks
+    - PATCH /v1/addons/webhooks/   # Update Webhook
+    - DELETE /v1/addons/webhooks/  # Delete Webhook
+events:
+  - name: plan.creation
+    title: Plan creation
+    description: A route plan was created.
+  - name: plan.edition
+    title: Plan edition
+    description: A route plan was edited.
+  - name: route.creation
+    title: Route creation
+    description: A route was created.
+  - name: route.edition
+    title: Route edition
+    description: A route was edited.
+  - name: route.started
+    title: Route started
+    description: A route was started (observed payload event ROUTE_STARTED).
+  - name: route.finish
+    title: Route finish
+    description: A route was finished / completed.
+  - name: route.on_its_way
+    title: On its way
+    description: A vehicle is on its way to the next visit.
+  - name: checkout
+    title: Checkout
+    description: A visit was checked out (delivery completed/attempted).
+  - name: checkout.detailed
+    title: Checkout detailed
+    description: Detailed checkout payload for a visit (extra fields, pictures, observations).
+notes:
+  - No published AsyncAPI document was found; this is the documented webhook catalog.
+  - Event name slugs are normalized from the reference section titles; ROUTE_STARTED is the only verbatim payload event string observed in the docs.
