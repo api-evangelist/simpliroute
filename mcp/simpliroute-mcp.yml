@@ -6,49 +6,54 @@ server:
   name: simpliroute
   transport: http
   url: null
-  note: >-
-    No official hosted/remote MCP server was found. This is a candidate tool list derived
-    from the documented REST operations to seed an MCP server.
+  note: No official hosted/remote MCP server was found. This is a candidate tool list derived from the
+    documented REST operations to seed an MCP server.
 tools:
-  - name: list_visits
-    description: List delivery/pickup visits (optionally by date).
-    source_operation: "GET https://api.simpliroute.com/v1/routes/visits/"
-  - name: create_visit
-    description: Create a visit (delivery/pickup stop), optionally with items.
-    source_operation: "POST https://api.simpliroute.com/v1/routes/visits/"
-  - name: get_visit
-    description: Retrieve a single visit by id.
-    source_operation: "GET https://api.simpliroute.com/v1/routes/visits/{visit_id}/"
-  - name: update_visit
-    description: Partially update a visit.
-    source_operation: "PATCH https://api.simpliroute.com/v1/routes/visits/{visit_id}/"
-  - name: delete_visit
-    description: Delete a visit.
-    source_operation: "DELETE https://api.simpliroute.com/v1/routes/visits/{visit_id}/"
-  - name: create_plan
-    description: Create a daily route plan.
-    source_operation: "POST https://api.simpliroute.com/v1/plans/"
-  - name: create_routes
-    description: Create routes.
-    source_operation: "POST https://api.simpliroute.com/v1/routes/routes/"
-  - name: list_route_visits
-    description: List the visits of a route.
-    source_operation: "GET https://api.simpliroute.com/v1/plans/routes/{route_id}/visits/"
-  - name: list_vehicles
-    description: List vehicles.
-    source_operation: "GET https://api.simpliroute.com/v1/routes/vehicles/"
-  - name: create_vehicle
-    description: Create a vehicle.
-    source_operation: "POST https://api.simpliroute.com/v1/routes/vehicles/"
-  - name: list_clients
-    description: List clients / recipients.
-    source_operation: "GET https://api.simpliroute.com/v1/accounts/clients/"
-  - name: checkout_visit
-    description: Check out (complete/attempt) a visit from the mobile flow.
-    source_operation: "POST https://api.simpliroute.com/v1/mobile/visit/{visit_id}/checkout/"
-  - name: create_webhook
-    description: Create an outbound webhook subscription.
-    source_operation: "POST https://api.simpliroute.com/v1/addons/webhooks/"
-  - name: optimize_routes
-    description: Run route optimization over vehicles and deliveries.
-    source_operation: "POST https://optimizator.simpliroute.com/ (Optimization Instance)"
+- name: list_visits
+  description: List delivery/pickup visits (optionally by date).
+  source_operation: GET https://api.simpliroute.com/v1/routes/visits/
+- name: create_visit
+  description: Create a visit (delivery/pickup stop), optionally with items.
+  source_operation: POST https://api.simpliroute.com/v1/routes/visits/
+- name: get_visit
+  description: Retrieve a single visit by id.
+  source_operation: GET https://api.simpliroute.com/v1/routes/visits/{visit_id}/
+- name: update_visit
+  description: Partially update a visit.
+  source_operation: PATCH https://api.simpliroute.com/v1/routes/visits/{visit_id}/
+- name: delete_visit
+  description: Delete a visit.
+  source_operation: DELETE https://api.simpliroute.com/v1/routes/visits/{visit_id}/
+- name: create_plan
+  description: Create a daily route plan.
+  source_operation: POST https://api.simpliroute.com/v1/plans/
+- name: create_routes
+  description: Create routes.
+  source_operation: POST https://api.simpliroute.com/v1/routes/routes/
+- name: list_route_visits
+  description: List the visits of a route.
+  source_operation: GET https://api.simpliroute.com/v1/plans/routes/{route_id}/visits/
+- name: list_vehicles
+  description: List vehicles.
+  source_operation: GET https://api.simpliroute.com/v1/routes/vehicles/
+- name: create_vehicle
+  description: Create a vehicle.
+  source_operation: POST https://api.simpliroute.com/v1/routes/vehicles/
+- name: list_clients
+  description: List clients / recipients.
+  source_operation: GET https://api.simpliroute.com/v1/accounts/clients/
+- name: checkout_visit
+  description: Check out (complete/attempt) a visit from the mobile flow.
+  source_operation: POST https://api.simpliroute.com/v1/mobile/visit/{visit_id}/checkout/
+- name: create_webhook
+  description: Create an outbound webhook subscription.
+  source_operation: POST https://api.simpliroute.com/v1/addons/webhooks/
+- name: optimize_routes
+  description: Run route optimization over vehicles and deliveries.
+  source_operation: POST https://optimizator.simpliroute.com/ (Optimization Instance)
+deployment:
+  mode: none
+  verified: derived
+  tools: 14
+  checked: '2026-08-12'
+  source: catalog MCP census
