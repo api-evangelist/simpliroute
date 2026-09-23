@@ -1,0 +1,32 @@
+# Front Door AI Index — simpliroute — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: simpliroute
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: simpliroute.com
+  final_host: simpliroute.com
+  ownership: own
+  owner: simpliroute
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 23
+  host_score: 23
+  density: 11.4
+  words: 2018
+  tiers:
+    agentic: 6
+    core: 17
+    model: 0
+  ambiguous: 9
+  top_terms:
+    AI: 15
+    agent: 3
+    conversational AI: 3
+    intelligence: 3
+    predictive: 3
+    AI agent: 2
+    artificial intelligence: 2
+    copilot: 1
